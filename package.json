@@ -23,5 +23,16 @@
     "webpack": "^5.1.3",
     "webpack-cli": "^4.1.0"
   },
-  "dependencies": {}
+  "dependencies": {},
+  "directories": {
+    "example": "examples"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LOUISINTERNET/fixed-header.git"
+  },
+  "bugs": {
+    "url": "https://github.com/LOUISINTERNET/fixed-header/issues"
+  },
+  "homepage": "https://github.com/LOUISINTERNET/fixed-header#readme"
 }
