@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <title>fixed header example</title>
+        <style>
+            * {
+                padding: 0;
+                margin: 0;
+            }
+
+            header {
+                width: 100vw;
+                height: 50px;
+                line-height: 50px;
+                background: blue;
+                text-align: center;
+                color: white;
+            }
+
+            header.is-fixed {
+                position: fixed;
+                background: lightblue;
+                transition: all 0.3s ease-in-out;
+            }
+
+            .container {
+                height: 150vh;
+            }
+        </style>
+    </head>
+    <body>
+        <header class="js-header">HEADER</header>
+        <div class="container">
+        </div>
+        <script type='text/javascript' src='../../dist/fixed-header.js'></script>
+        <script type='text/javascript'>
+            fixedHeader('.js-header', {
+                related: [
+                    {
+                        obj: 'html',
+                        activeClass: 'header--fixed',
+                    }
+                ]
+            })
+        </script>
+    </body>
+</html>

@@ -1,0 +1,27 @@
+{
+  "name": "@lia/fixed-header",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build:browser": "webpack && cp dist/fixed-header.js examples/browser",
+    "build": "webpack --mode production",
+    "dev": "webpack --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Patrick Kahl <kahl.patrick@googlemail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.12.3",
+    "@babel/preset-env": "^7.12.1",
+    "@babel/register": "^7.12.1",
+    "babel-loader": "^8.1.0",
+    "eslint": "^7.11.0",
+    "eslint-loader": "^4.0.2",
+    "lodash": "^4.17.20",
+    "webpack": "^5.1.3",
+    "webpack-cli": "^4.1.0"
+  },
+  "dependencies": {}
+}
