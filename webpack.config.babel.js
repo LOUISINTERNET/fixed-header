@@ -12,19 +12,16 @@ module.exports = () => {
       libraryExport: 'default',
       library: 'fixedHeader',
     },
-    // module: {
-    //   rules: [
-    //     {
-    //       test: /\.js$/,
-    //       exclude: /(node_modules|bower_components)/,
-    //       use: {
-    //         loader: 'babel-loader',
-    //         // options: {
-    //         //   presets: ['@babel/preset-env'], //Preset used for env setup
-    //         // },
-    //       },
-    //     },
-    //   ],
-    // },
+    module: {
+      rules: [
+        {
+          test: /\.js$/,
+          exclude: /(node_modules|bower_components)/,
+          use: {
+            loader: 'babel-loader',
+          },
+        },
+      ],
+    },
   }
 }

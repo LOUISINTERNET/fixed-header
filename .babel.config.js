@@ -1,5 +1,4 @@
 module.exports = (api) => {
-  console.log('here')
   api.cache(true)
 
   return {
@@ -9,7 +8,7 @@ module.exports = (api) => {
         {
           useBuiltIns: 'usage',
           corejs: 3,
-          debug: true,
+          debug: false,
           bugfixes: true,
         },
       ],
