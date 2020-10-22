@@ -31,16 +31,18 @@
         <header class="js-header">HEADER</header>
         <div class="container">
         </div>
-        <script type='text/javascript' src='../../dist/fixed-header.js'></script>
-        <script type='text/javascript'>
-            fixedHeader('.js-header', {
-                related: [
-                    {
-                        obj: 'html',
-                        activeClass: 'header--fixed',
-                    }
-                ]
-            })
+        <script src="../../dist/fixed-header.polyfilled.js"></script>
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                fixedHeader('.js-header', {
+                    related: [
+                        {
+                            obj: 'html',
+                            activeClass: 'header--fixed',
+                        }
+                    ]
+                })
+            });
         </script>
     </body>
 </html>

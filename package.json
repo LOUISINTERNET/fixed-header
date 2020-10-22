@@ -2,9 +2,8 @@
   "name": "@louis-internet/fixed-header",
   "version": "0.0.2",
   "description": "",
-  "main": "index.js",
+  "main": "dist/fixed-header.js",
   "scripts": {
-    "build:browser": "webpack && cp dist/fixed-header.js examples/browser",
     "build": "webpack --mode production",
     "dev": "webpack --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -17,6 +16,8 @@
     "@babel/preset-env": "^7.12.1",
     "@babel/register": "^7.12.1",
     "babel-loader": "^8.1.0",
+    "babel-plugin-add-module-exports": "^1.0.4",
+    "core-js": "3",
     "eslint": "^7.11.0",
     "eslint-loader": "^4.0.2",
     "lodash": "^4.17.20",

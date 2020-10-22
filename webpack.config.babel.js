@@ -1,14 +1,14 @@
 const path = require('path')
 
-module.exports = () => {
+const createConfig = ({ name = '', esmodules = false } = {}) => {
   return {
     mode: 'production',
-    entry: './index.js',
+    entry: { 'fixed-header': './index.js' },
     output: {
       path: path.resolve(__dirname, './dist'),
-      filename: 'fixed-header.js',
+      filename: `[name]${name}.js`,
       libraryTarget: 'umd',
-      globalObject: 'this',
+      // globalObject: 'this',
       libraryExport: 'default',
       library: 'fixedHeader',
     },
@@ -16,12 +16,30 @@ module.exports = () => {
       rules: [
         {
           test: /\.js$/,
-          exclude: /(node_modules|bower_components)/,
-          use: {
-            loader: 'babel-loader',
+          exclude: /node_modules/,
+          loader: 'babel-loader',
+          options: {
+            presets: [
+              [
+                '@babel/preset-env',
+                {
+                  useBuiltIns: 'usage',
+                  corejs: 3,
+                  targets: {
+                    esmodules,
+                  },
+                },
+              ],
+            ],
+            plugins: ['add-module-exports'],
           },
         },
       ],
     },
   }
 }
+
+module.exports = () => [
+  createConfig({ esmodules: true }),
+  createConfig({ name: '.polyfilled' }),
+]
