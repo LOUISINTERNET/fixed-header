@@ -1,6 +1,6 @@
 {
   "name": "@louis-internet/fixed-header",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "",
   "main": "dist/fixed-header.js",
   "scripts": {
