@@ -27,7 +27,7 @@ const run = (header, cnf) => {
 }
 
 const updateFixedHeight = (elm) => {
-  elm.style.removeProperty('height')
+  elm.style?.removeProperty('height')
   const height = elm.offsetHeight
   if (!elm.dataset.maxHeight || elm.dataset.maxHeight < height) {
     elm.style.height = `${height}px`
@@ -55,7 +55,10 @@ const fixedHeader = (cls, config = {}) => {
 
     window.addEventListener(
       'scroll',
-      _throttle(() => run(header, cnf), 100),
+      _throttle(() => {
+        if (window.pageYOffset === 0 && cnf.fixedHeight) updateFixedHeight(header)
+        run(header, cnf), 100
+      }),
       { passive: true }
     )
     run(header, cnf)
