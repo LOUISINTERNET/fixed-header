@@ -10,8 +10,8 @@ const CONFIG = {
 
 const run = (header, cnf) => {
   if (window.pageYOffset > cnf.offset) {
-    header.classList.add(cnf.activeClass)
     if (cnf.fixedHeight) updateFixedHeight(header)
+    header.classList.add(cnf.activeClass)
     cnf.related.map(
       ({ obj, activeClass = cnf.activeClass }) =>
         obj && document.querySelector(obj)?.classList.add(activeClass)
