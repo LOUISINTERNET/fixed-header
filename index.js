@@ -29,12 +29,25 @@ const fixedHeader = (cls, config = {}) => {
   const cnf = { ...CONFIG, ...config }
 
   if (header) {
+    if (cnf.fixedHeight) {
+      window.addEventListener(
+        'resize',
+        _throttle(() => {
+          header.style.removeProperty('height')
+          window.requestAnimationFrame(() => {
+            header.style.height = `${header.offsetHeight}px`
+          })
+        }, 100),
+        { passive: true }
+      )
+
+      header.style.height = `${header.offsetHeight}px`
+    }
+
     window.addEventListener(
       'scroll',
       _throttle(() => run(header, cnf), 100),
-      {
-        passive: true,
-      }
+      { passive: true }
     )
     run(header, cnf)
   }
