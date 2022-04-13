@@ -61,13 +61,6 @@ After this scroll offset the class whould be triggert
 _Default: 0_
 _Type: Integer_
 
-#### fixedHeight
-
-If the target class is sticky and changes the height, padding, or something similar, you can get flickering. With this option, you can prevent this from happening.
-
-_Default: false_
-_Type: Boolean_
-
 #### related
 
 Toggle classes on additional Dom Nodes
